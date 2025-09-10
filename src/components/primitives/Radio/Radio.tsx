@@ -130,7 +130,7 @@ const RadioComponent = memo(
               <Box {..._interactionBox} />
               {/* radio */}
               <Center {...resolvedProps}>
-                {icon && sizedIcon && isChecked ? (
+                {icon && isChecked ? (
                   sizedIcon()
                 ) : (
                   <CircleIcon {..._icon} opacity={isChecked ? 1 : 0} />

@@ -26,9 +26,10 @@ export function useScreenReaderEnabled() {
     );
 
     setInitialValue();
+    const subscription = AccessibilityInfo.addEventListener('screenReaderChanged', handler);
     return () => {
       mountedRef.current = false;
-      AccessibilityInfo.removeEventListener('screenReaderChanged', handler);
+      subscription?.remove();
     };
   });
 

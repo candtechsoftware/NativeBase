@@ -162,7 +162,7 @@ function ListBoxPopup(props: IListBoxProps) {
   let { listBoxProps } = useListBox(
     {
       label,
-      autoFocus: state.focusStrategy,
+      autoFocus: state.focusStrategy || undefined,
       disallowEmptySelection: true,
     },
     state,

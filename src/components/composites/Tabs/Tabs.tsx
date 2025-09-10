@@ -4,7 +4,7 @@ import type { ITabsProps } from './types';
 import { useThemeProps } from '../../../hooks';
 import { TabsContext } from './Context';
 import { Item } from '@react-stately/collections';
-import { useTabsState } from '@react-stately/tabs';
+import { useTabListState as useTabsState } from '@react-stately/tabs';
 import TabViews from './TabViews';
 import TabBar from './TabBar';
 import { useTabs } from '@react-native-aria/tabs';

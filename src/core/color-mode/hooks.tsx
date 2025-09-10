@@ -33,16 +33,9 @@ export const useAppState = () => {
     () => ({
       getCurrentValue: () => AppState.currentState,
       subscribe: (callback: () => void) => {
-        const subsription = AppState.addEventListener('change', callback);
+        const subscription = AppState.addEventListener('change', callback);
         return () => {
-          if (AppState.removeEventListener) {
-            // React Native < 0.65
-            AppState.removeEventListener('change', callback);
-          } else {
-            // React Native >= 0.65
-            // @ts-ignore:next-line ignoring ts error as devDependency contains "@types/react-native" < 0.65
-            subsription.remove();
-          }
+          subscription?.remove();
         };
       },
     }),

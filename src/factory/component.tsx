@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import { usePropsWithComponentTheme } from '../hooks/useThemeProps/usePropsWithComponentTheme';
 import type { ComponentTheme } from '../theme';
-import type { FactoryComponentProps } from './types';
 import { makeStyledComponent } from '../utils/styled';
 
 export default function Factory<P>(
@@ -9,7 +8,7 @@ export default function Factory<P>(
   componentTheme?: ComponentTheme
 ) {
   return React.forwardRef(
-    ({ children, _state, ...props }: P & FactoryComponentProps, ref: any) => {
+    ({ children, _state, ...props }: any, ref: any) => {
       const StyledComponent = useMemo(() => makeStyledComponent(Component), []);
       const calculatedProps = usePropsWithComponentTheme(
         componentTheme ?? {},

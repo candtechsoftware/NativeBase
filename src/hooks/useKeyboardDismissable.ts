@@ -49,11 +49,9 @@ export function useBackHandler({ enabled, callback }: IParams) {
       return true;
     };
     if (enabled) {
-      BackHandler.addEventListener('hardwareBackPress', backHandler);
-    } else {
-      BackHandler.removeEventListener('hardwareBackPress', backHandler);
+      const subscription = BackHandler.addEventListener('hardwareBackPress', backHandler);
+      return () => subscription.remove();
     }
-    return () =>
-      BackHandler.removeEventListener('hardwareBackPress', backHandler);
+    return () => {};
   }, [enabled, callback]);
 }

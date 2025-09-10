@@ -68,8 +68,8 @@ const SlideFade = ({ children, ...props }: ISlideFadeProps, ref?: any) => {
       style={[
         {
           opacity: fadeAnim,
-          transform: [{ translateX: slideAnimX, translateY: slideAnimY }],
-        },
+          transform: [{ translateX: slideAnimX }, { translateY: slideAnimY }],
+        } as any,
       ]}
       ref={ref}
     >

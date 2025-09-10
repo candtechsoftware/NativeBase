@@ -15,6 +15,7 @@ export interface InterfaceImageProps
       | 'height'
       | 'width'
       | 'source'
+      | 'tintColor'
     >,
     StyledProps {
   /**

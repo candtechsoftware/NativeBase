@@ -15,7 +15,7 @@ export const APPROX_STATUSBAR_HEIGHT = Platform.select({
     ? DEFAULT_STATUSBAR_HEIGHT_EXPO
     : StatusBar.currentHeight,
   ios:
-    Platform.Version < 11
+    Number(Platform.Version) < 11
       ? DEFAULT_STATUSBAR_HEIGHT_EXPO
         ? DEFAULT_STATUSBAR_HEIGHT_EXPO
         : IOS_STATUS_BAR_HEIGHT
